@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUITSHOP</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            width: 100vw;
+            height: 100dvh;
+            position:absolute;
+            background-image: url(vegi.webp);
+            background-size: 100% 100%;
+            background-size: cover;
+            backdrop-filter: blur(2px) grayscale(50%);
+        } 
+        .main{
+            width: 90%;
+            margin-left: 50px;
+            margin-right: auto;
+            margin-top: 50px;
+            /* position: absolute; */
+            padding:10px 20px;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .submain{
+            /* position: absolute; */
+            width:400px;
+            height: auto;
+            border:none;
+            border-radius: 10px;
+            background:linear-gradient(to bottom,#BE0449,#4C6628);
+            box-shadow: rgba(16, 16, 16, 0.5) 0px 3px 8px;;
+        }
+        /* .apple{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        } */
+        .submain img{
+            width: 80%;
+            height: 200px;
+            background:none;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 40px;
+
+        }
+        .submain figcaption{
+            padding-left: 170px;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top:-20px;
+        }
+        .av{
+            position: relative;
+        }
+        .av h3{
+            color:azure;
+            display: block;
+            font-size: larger;
+            font-weight: 500;
+            margin-bottom: 5px;
+            margin-left: 30px;
+        }
+        .av div{
+            /* display: block; */
+            width: 50%;
+            margin-left: 30px;
+            padding: 10px 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: larger;
+            outline: none;
+            border-color: yellowgreen;
+            background-color: green;
+            border-radius: 20px;
+        }
+        .av .buy_all{
+            position: absolute;
+            margin-left: 300px;
+            margin-top: -54px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .button{
+            padding:10px;
+            margin-left: 30px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color:#DE3431;
+            font-size: large;
+        }
+        .remove{
+            padding:10px;
+            margin-left: 20px;
+            border-radius: 10px;
+            color: #BE0449;
+            font-size: larger;
+        }
+        .noa{
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .noa .no{
+            margin-left: 125px;
+            margin-top: 10px;
+            color:rgb(244, 244, 8);
+            font-size: 16px;
+        }
+        .noof{
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color:#287A8F;
+            width: 50%;
+            text-align: center;
+            color:azure;
+            border-radius: 20px;
+        }
+        .bill h4{
+            color:azure;
+            font-size: larger;
+        }
+        .tot{
+            color:aliceblue;
+            font-size: larger;
+            font-weight: 500;
+        }
+        .buy{
+            width:80px;
+            padding: 10px;
+            font-weight: 400;
+            position: absolute;
+            left: 300px;
+            top:32px;
+            font-size: large;
+            border-radius: 10px;
+            color: #287A8F;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .ac{
+            width:80px;
+            padding: 5px;
+            font-weight: 400;
+            position: absolute;
+            left: 300px;
+            top:-55px;
+            margin-top: 2px;
+            font-size: large;
+            border-radius: 10px;
+            color: #287A8F;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bill{
+            text-align: center;
+            font-variant: small-caps;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="submain">
+            <div class="apple">
+                <figure>
+                <img src="apple.webp" alt="apples">
+                <figcaption>APPLES</figcaption>
+                </figure>
+            </div>
+            <div class="av">
+                <h3>Apples Available</h3>
+                <div id="di">60</div>
+                <button class="buy_all">BUY ALL</button>
+                <!-- <input type="text" name="display" id="dis" value="60"> -->
+            </div>
+            <button id="bt" class="button">ADD TO BUY</button>
+            <button id="re" class="remove">REMOVE</button>
+            <div class="noa">
+                <label class="no">NO OF APPLES ADDED</label>
+                <!-- <input type="text" name="display" id="noof" value="0"> -->
+                 <div class="noof">0</div>
+                 <button class="ac">AC</button>
+                 <button class="buy">BUY</button>
+            </div>
+            <div class="bill">
+                <h4>total bill</h4>
+                <div class="tot">0</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var d=document.getElementById('di')
+        
+        var btn = document.querySelector('.button');
+        var bt = document.querySelector('.remove');
+        var btnbuy=document.querySelector('.buy')
+        var btnall=document.querySelector('.buy_all')
+        var ac=document.querySelector('.ac')
+        var n=document.querySelector('.noof')
+        btn.addEventListener('click',myfun)
+        bt.addEventListener('click',myfun1)
+        btnbuy.addEventListener('click',Buy)
+        btnall.addEventListener('click',Buyall)
+        ac.addEventListener('click',Ac)
+        function myfun(){
+            var count=parseInt(d.innerText)
+            var coun=parseInt(n.innerText)
+            count=count-1
+            coun=coun+1
+            // console.log(count)
+            d.innerText=count
+            n.innerText=coun
+            
+            if(count<=10){
+                d.style.border='2px solid green'
+                d.style.backgroundColor='red'
+                d.style.color='white'
+
+            }
+            if(count==0 && count<=0){
+                count="SOLDOUT"
+                d.innerText=count
+            }
+            if(coun>=61){
+                coun=coun-1
+                n.innerText=coun
+            }
+        }
+        function myfun1(){
+            var count=parseInt(d.innerText)
+            var coun=parseInt(n.innerText)
+            if(count<=60 && count>0)
+             {
+                count=count+1
+                coun=coun-1
+                d.innerText=count
+                n.innerText=coun
+              }
+            else if(count>=60){
+                count=count-1
+                coun=coun+1
+                d.innerText=count
+                n.innerText=coun
+            }
+        }
+        function Buy(){
+        var b = document.querySelector('.tot');
+        var apple=25
+        var c=apple*parseInt(n.innerText)
+        b.innerText=c
+     }
+     function Buyall(){
+        var dd=document.querySelector('#di')
+        console.log(dd)
+        var all=parseInt(dd.innerText)
+        var bb = document.querySelector('.tot');
+        var apple=25
+        var pri=all*apple
+        bb.innerText=pri
+        dd.innerText=0
+        dd.style.backgroundColor='red'
+        dd.style.color='white'
+        }
+        function Ac(){
+            var ad=document.querySelector('#di')
+            ad.innerText=60
+            ad.style.backgroundColor='green'
+            ad.style.color='black'
+            var tot = document.querySelector('.tot');
+            tot.innerText=0
+            var nn=document.querySelector('.noof')
+            nn.innerText=0
+        }
+
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }
 body{
@@ -19,7 +19,7 @@ body{
     border-radius: 10px;
     padding: 10px 10px;
     background:linear-gradient(to bottom,);
-    background-color: rgb(209, 235, 138);
+    background-color: rgb(245, 154, 239);
 }
 .newtask{
     display:flex;
@@ -66,14 +66,17 @@ body{
     color:aliceblue;
     border-radius: 5px;
     border: 1px solid rgb(23, 21, 21);
-    background-color: rgb(1, 42, 42);
+    background-color: #965261;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .work{
     flex-grow: 1;
+    width: 70%;
+    overflow-wrap: break-word;
+    padding-bottom: 4px;
 }
 .del{
-    color:red;
+    color:rgb(243, 243, 12);
     border: none;
     outline: none;
     background: none;
@@ -81,12 +84,40 @@ body{
     cursor: pointer;
 }
 .edit{
-    color:rgb(0, 136, 255);
+    color:rgb(10, 245, 45);
     border: none;
     outline: none;
     background: none;
     border:5px;
     cursor: pointer;
-    
-    
+}
+.check{
+    color: yellow;
+    border: none;
+    outline: none;
+    background: none;
+    border:5px;
+    cursor: pointer;
+    font-size: small;
+}
+.edit-input{
+background-color: rgb(32, 118, 118);
+outline: none;
+border: none;
+color: white;
+font-size: medium;
+width: 70%;
+}
+@media screen and (max-width: 440px) {
+    .work {
+        overflow-wrap: break-word;
+        font-size: small;
+    }
+
+    .task{
+        flex-direction: row; 
+        align-items: flex-start;
+        height: auto; 
+    }
+
 }

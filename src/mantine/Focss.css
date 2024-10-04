@@ -1,0 +1,17 @@
+/* src/styles.css */
+
+.modal-title {
+    color: #1A73E8; /* Change title color */
+    font-weight: bold;
+  }
+  
+  
+  button {
+    background-color: #1A73E8; /* Primary button color */
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #0c5cd8; /* Darker on hover */
+  }
+  

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREVIEW</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background:linear-gradient(to top,rgb(226, 254, 154)30%,rgb(134, 224, 134));
+        }
+        .in {
+            margin: 50px 60px;
+            box-sizing: border-box;
+            width: 250px;
+            height: 100px;
+            border: 2px dashed red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 30px;
+        }
+        .in input {
+            color: red;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .preview{
+            position: absolute;
+            overflow: scroll;
+            left: 400px;
+            top:40px;
+            width:500px;
+            height:400px;
+            padding: 20px;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+        #fileName{
+            position: absolute;
+            left:120px;
+            top:160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="in">
+        <input type="file" id="fileInput">  
+    </div>
+    <div class="file-name" id="fileName"></div>
+    <pre class="preview" id="preview"></pre>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const outputEle = document.getElementById('preview');
+        const fileNameDisplay = document.getElementById('fileName');
+
+        const savedContent = localStorage.getItem('savedFileContent');
+        const savedFileName = localStorage.getItem('savedFileName');
+
+        if (savedContent) {
+            outputEle.textContent = savedContent;
+        }
+        if (savedFileName) {
+            fileNameDisplay.textContent = `Selected file: ${savedFileName}`; 
+        }
+
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const fr = new FileReader();
+                fr.readAsText(file);
+                fr.addEventListener('load', () => {
+                    outputEle.textContent = fr.result;
+                    localStorage.setItem('savedFileContent', fr.result);
+                    localStorage.setItem('savedFileName', file.name);
+                    fileNameDisplay.textContent = `Selected file: ${file.name}`; 
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

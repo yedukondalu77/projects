@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILE PREVIEW</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .in{
+            margin:40px 60px;
+           box-sizing: border-box;
+            width: 250px;
+            height: 100px;
+            border: 2px dashed red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 30px;
+        }
+        .in input{
+            color:red;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .preview{
+            position: absolute;
+            left: 400px;
+            top:40px;
+            width:500px;
+            height:400px;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+        .preview img{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            object-fit:center;
+        }
+        #fileName{
+            position: absolute;
+            left:120px;
+            top:160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="in">
+        <input type="file" accept="image/*" id="fileInput">  
+
+    </div>
+    <div class="file-name" id="fileName"></div>
+
+    <div>
+        <img class="preview" id="preview" alt="">
+    </div>
+
+    <script>
+
+
+        let fileInput = document.getElementById('fileInput');
+        let outputEle = document.getElementById('preview');
+        let fileNameDisplay = document.getElementById('fileName');
+
+    
+        const savedImage = localStorage.getItem('savedImage');
+        const savedFileName = localStorage.getItem('savedFileName');
+
+        if (savedImage) {
+            outputEle.src = savedImage;
+        }
+        if (savedFileName) {
+            fileNameDisplay.textContent = savedFileName; 
+        }
+
+        fileInput.addEventListener('change', () => {
+            let file = fileInput.files[0];
+            if (file) {
+                let fr = new FileReader();
+                fr.readAsDataURL(file);
+                fr.addEventListener('load', () => {
+                    outputEle.src = fr.result; 
+                    localStorage.setItem('savedImage', fr.result);
+                    localStorage.setItem('savedFileName', file.name); 
+                    fileNameDisplay.textContent = file.name; 
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+

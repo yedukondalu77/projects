@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100dvh;
+}
+.app{
+    width:min(80vw,350px);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background:linear-gradient(to bottom,);
+    background-color: rgb(245, 154, 239);
+}
+.newtask{
+    display:flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+#taskid{
+    width:70%;
+    font-size: large;
+    padding: 5px;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+#add{
+    width:25%;
+    padding: 5px;
+    font-size: larger;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#taskid:focus{
+    border-color: blueviolet;
+}
+#tasklist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    width: 100%;
+}
+.task{
+    display: flex;
+    /* justify-content: space-between;  */
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 10px;
+    width: 100%;
+    height: 45px;
+    color:aliceblue;
+    border-radius: 5px;
+    border: 1px solid rgb(23, 21, 21);
+    background-color: #965261;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.work{
+    flex-grow: 1;
+    width: 70%;
+    overflow-wrap: break-word;
+    padding-bottom: 4px;
+}
+.del{
+    color:rgb(243, 243, 12);
+    border: none;
+    outline: none;
+    background: none;
+    border:5px;
+    cursor: pointer;
+}
+.edit{
+    color:rgb(10, 245, 45);
+    border: none;
+    outline: none;
+    background: none;
+    border:5px;
+    cursor: pointer;
+}
+.check{
+    color: yellow;
+    border: none;
+    outline: none;
+    background: none;
+    border:5px;
+    cursor: pointer;
+    font-size: small;
+}
+.edit-input{
+background-color: rgb(32, 118, 118);
+outline: none;
+border: none;
+color: white;
+font-size: medium;
+width: 70%;
+}
+@media screen and (max-width: 440px) {
+    .work {
+        overflow-wrap: break-word;
+        font-size: small;
+    }
+
+    .task{
+        flex-direction: row; 
+        align-items: flex-start;
+        height: auto; 
+    }
+
+}

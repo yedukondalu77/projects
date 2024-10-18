@@ -37,8 +37,10 @@
         }
         #fileName{
             position: absolute;
-            left:120px;
-            top:160px;
+            left:420px;
+            top:30px;
+            /* margin-left: auto;
+            margin-right: auto; */
         }
     </style>
 </head>
@@ -61,7 +63,7 @@
             outputEle.textContent = savedContent;
         }
         if (savedFileName) {
-            fileNameDisplay.textContent = `Selected file: ${savedFileName}`; 
+            fileNameDisplay.textContent = savedFileName; 
         }
 
         fileInput.addEventListener('change', () => {
@@ -73,7 +75,7 @@
                     outputEle.textContent = fr.result;
                     localStorage.setItem('savedFileContent', fr.result);
                     localStorage.setItem('savedFileName', file.name);
-                    fileNameDisplay.textContent = `Selected file: ${file.name}`; 
+                    fileNameDisplay.textContent = file.name; 
                 });
             }
         });

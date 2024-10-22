@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER-APP</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="heading">WEATHER-APP</div>
+            <div class="inp">
+                <input type="text" id="input" name="input" placeholder="select a city">
+                <button id="button"><span class="material-symbols-outlined">
+                    search
+                    </span></button>
+            </div>
+            <div id="dd"><div id =date></div></div>
+            <div class="block1">
+                <div id="block1">
+                    <!-- <img src="cloud.webp" alt="cloud"> -->
+                </div>
+                <div id="temp">
+                <h2 id="temparature"></h2>
+                <div id=cel>
+                    <!-- <span id="c">&#x2103;</span> -->
+                </div>
+                <div id="type"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div >
+                    <div id="humidity" class="humidity"><!-- <span class="material-symbols-outlined" id="air">
+                        air
+                    </span> -->
+                    </div>
+                    <div id="wind"></div>
+                    <div id="speed"></div>
+                </div>
+                <div>
+                    <div id="h">
+                        <!-- <span class="material-symbols-outlined" id="hum">
+                        water_drop
+                        </span> -->
+                    </div>
+                        <div id="humi"></div>
+                        <div id="hp"></div>
+                </div>
+            </div>
+            <div class="location" id="location">
+                <div id="licon">
+                    <!-- <span class="material-symbols-outlined" id="loc">
+                    location_on
+                    </span> -->
+                </div>
+                <div id="locname"></div>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="weather.js"></script>
+</body>
+</html>

@@ -68,12 +68,15 @@ body{
     border: 1px solid rgb(23, 21, 21);
     background-color: #965261;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    
 }
 .work{
     flex-grow: 1;
     width: 70%;
-    overflow-wrap: break-word;
+    /* overflow-wrap:break-word; */
+    overflow:hidden;
     padding-bottom: 4px;
+    
 }
 .del{
     color:rgb(243, 243, 12);
